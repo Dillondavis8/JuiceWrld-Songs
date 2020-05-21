@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!--PERSONAL SCRIPT-->
+<script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script> 
+<script>
+    var song = {{song|tojson}}
+</script>
+
+<style>
+#songSearch {
+    width: 300px;
+}
+
+.top {
+    margin-top: 80px !important;
+}
+
+#title {
+    font-size: 170% !important;
+    font-weight: normal !important;
+}
+
+.header {
+    font-size: 130%;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.adjust {
+    font-weight:bold;
+    border-style: solid;
+    border-color: black;
+    background-color: black;
+    color: white;
+    font-size: 85%;
+}
+
+.grab {
+    cursor: pointer;
+}
+
+#editDesc {
+    width: 800px;
+    height: 150px;
+    display: none;
+}
+
+#submitDesc {
+    display: none;
+}
+
+#discardDesc {
+    display: none;
+}
+
+#editNum {
+    width: 300px;
+    display: none;
+}
+
+#submitNum {
+    display: none;
+}
+
+#discardNum {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.showButton {
+    display: inline-block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.delete_button {
+    float: left;
+}
+
+.close {
+    margin-left: 60px;
+}
+
+.undo {
+    font-size: 15%;
+    height: 20px;
+    width: 40px;
+    margin-left: 20px;
+}
+
+
+
+</style>
+
+
+<body>
+<div class="container song-container">
+<div class="header top">Title: <span id="title"></span></div>
+
+
+<div id="albumCover"> 
+
+</div>
+<div class="header"> 
+    Number of streams:
+    <span class="adjust" id="numEdit">Edit</span>
+    </div>
+
+<i class="fa fa-play-circle-o"></i>
+<span id="plays"> </span>
+
+<input id="editNum" type="text"></input>
+    <br>
+
+<button id="submitNum" class="btn btn-primary">Submit</button>
+<button id="discardNum" class="btn btn-primary">Discard Changes</button>
+
+
+
+<div class="header"> Listen on these platforms: 
+    <span id="undoButtons"></span>
+</div>
+
+<div class="row" id="deleteButtons"> </div>
+<i class="fa fa-music"></i>
+<span id="platformsAvailable"> 
+    </span> 
+<br>
+<div class="header" >
+    Song description:
+    <span class="adjust" id="edit">Edit</span>
+</div>
+
+<div id="description"></div>
+<textarea id="editDesc" type="text"></textarea>
+    <br>
+
+<button id="submitDesc" class="btn btn-primary">Submit</button>
+<button id="discardDesc" class="btn btn-primary">Discard Changes</button>
+
+</div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!--PERSONAL SCRIPT-->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script> 
+<script>
+    var newSong = {{newSong|tojson}}
+</script>
+
+<style>
+#songSearch {
+    width: 300px;
+}
+
+#header {
+    margin-top: 80px;
+    font-size: 175%;
+    font-weight: bold; 
+    text-align: center;
+    width: fit-content;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lightgray;
+    background-color: lightgoldenrodyellow;
+}
+
+#title {
+    width: 700px;
+}
+
+#albumCover {
+    width: 700px;
+}
+
+#songDescription {
+    width: 700px;
+}
+
+#plays {
+    width: 700px;
+}
+
+#platforms {
+    width: 700px;
+}
+
+#albumError {
+    color: red;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#playsError {
+    color: red;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#titleError {
+    color: red;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#descError {
+    color: red;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#platError {
+    color: red;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#songMade {
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    color: green;
+    width: fit-content;
+    margin-top: 20px;
+    border-width: 1px;
+}
+
+.successMade {
+    border-color: lightgreen;
+    border-style: solid;
+}
+
+#newSong {
+    margin-top: 5px;
+    width: fit-content;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.songSuccess {
+    border-style: solid;
+    border-color: grey;
+    background-color: lightskyblue;
+}
+
+.grab {
+    cursor: pointer;
+}
+
+#submit {
+    margin-top: 15px;
+}
+
+body {
+    background-color: #2D3442
+}
+</style>
+
+
+<body>
+<div class="container song-container">
+<div id="header">Add a Juice Wrld Song</div>
+<div id="titleError"></div>
+<input id="title" class="form-control-sm" type="text" placeholder="Title"/><br>
+<div id="albumError"></div>
+<input id="albumCover" class="form-control-sm" type="text" placeholder="Album Art (jpg)"/><br>
+<div id="descError"></div>
+<input id="songDescription" class="form-control-sm" type="text" placeholder="Song Description"/><br>
+<div id="playsError"></div>
+<input id="plays" class="form-control-sm" type="text" placeholder="# of plays using commas when needed"/><br>
+<div id="platError"></div>
+<input id="platforms" class="form-control-sm" type="text" placeholder="Platforms Available separated by commas"/><br>
+<button id="submit" class="btn btn-primary">Submit</button>
+<div id="songMade"></div>
+<div id="newSong">
+
+</div>
+
+</div>
+</body>
+
+{% endblock %}

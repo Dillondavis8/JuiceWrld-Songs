@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'results.js') }}"></script>
+<script>
+    var songs = {{songs|tojson}}
+</script>
+
+<style>
+.grab {
+    cursor: pointer;
+}
+
+.item-row {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.delete {
+    color: red;
+}
+
+.lit {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.post {
+    border-style: solid;
+    border-bottom-color: black;
+    border-top-color: white;
+    border-width: 1px;
+    border-right-color: white;
+    border-left-color: white;
+    background-color: cornsilk; 
+    font-weight: bold;
+    font-size: 120%;
+    flex: auto;
+}
+
+.dope {
+    border-style: solid;
+    border-color: white;
+}
+
+#songSearch {
+    width: 300px;
+}
+
+#siteGoal {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 410px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    border-style: solid;
+    border-color: lightgrey;
+    background-color: lightcyan;
+}
+
+.cards {
+    margin-top: 30px;
+}
+
+.cardsRow {
+    margin-top: 30px;
+}
+
+.f0 {
+    margin-left: 120px;
+}
+
+.f5 {
+    margin-left: 120px;
+}
+
+.songInfo {
+    color: black;
+
+}
+
+.noResults {
+    background-color: lightcoral ! important;
+}
+
+#numResults {
+    width: 48%;
+    margin-top: 80px;
+    background-color: honeydew;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 130%;
+    align-content: center;
+}
+
+
+
+</style>
+
+
+<body>
+    <div id="numResults">
+    </div>
+    <div id="noResults">
+    
+    </div>
+    <div id="songResults"> 
+
+    </div> 
+</body>
+
+{% endblock %}
+

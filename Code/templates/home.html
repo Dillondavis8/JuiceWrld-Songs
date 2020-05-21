@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+<script>
+    var songs = {{songs|tojson}}
+</script>
+
+<style>
+#songSearch {
+    width: 300px;
+}
+
+.item-row {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.delete {
+    color: red;
+}
+
+.post {
+    border-style: solid;
+    border-color: black;
+}
+
+#songSearch {
+    width: 300px;
+}
+
+#siteGoal {
+    text-align: center;
+    flex: auto;
+    margin-top: 85px;
+    font-size: 115%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    border-style: solid;
+    border-color: lightgrey;
+    background-color: lightcyan;
+}
+
+.cards {
+    margin-top: 30px;
+}
+
+.cardsRow {
+    margin-top: 30px;
+}
+
+.header {
+    display: flex;
+}
+
+.f0 {
+    margin-left: 120px;
+}
+
+.f5 {
+    margin-left: 120px;
+}
+
+body {
+    background-color: #2D3442
+}
+
+</style>
+
+
+<body>
+    <div class="row header">
+        <div id="siteGoal" class="col-md-12">
+            Our mission is to allow fans of Juice Wrld to search through his released and unreleased songs 
+            and to add new songs of his that have not been discovered yet.
+        </div>
+    </div>
+
+    <div class="container-fluid rap">
+        <div class="row cardsRow" id="top">
+
+        </div>
+        <div class="row cardsRow" id="low">
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+
